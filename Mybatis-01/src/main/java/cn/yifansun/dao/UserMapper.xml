@@ -4,21 +4,21 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace=绑定一个对应的Dao/Mapper接口-->
-<mapper namespace="cn.yifansun.dao.UserDao">
+<mapper namespace="cn.UserMapper">
 
-    <select id="selectUser" resultType="cn.yifansun.pojo.User">
+    <select id="selectUser" resultType="User">
         select * from user
     </select>
 
-    <select id="getUserById" parameterType="int" resultType="cn.yifansun.pojo.User">
+    <select id="getUserById" parameterType="int" resultType="cn.User">
         select * from user where id=#{id}
     </select>
 <!--对象中的属性可以直接取出来-->
-    <insert id="addUser" parameterType="cn.yifansun.pojo.User">
+    <insert id="addUser" parameterType="cn.User">
         insert into user(id,name,pwd) values (#{id},#{name},#{pwd})
     </insert>
 
-    <update id="updateUser" parameterType="cn.yifansun.pojo.User">
+    <update id="updateUser" parameterType="cn.User">
         update user
         set name = #{name},pwd=#{pwd},id=#{id}
         where id=#{id};

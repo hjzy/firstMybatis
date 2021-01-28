@@ -11,13 +11,13 @@ import java.util.List;
  * @author:yifan->2540584259@qq.com
  * @date:2021/1/23,21:26
  */
-public class UserDaoTest {
+public class UserMapperTest {
     @Test
     public void test() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         try {
-            UserDao userDao = sqlSession.getMapper(UserDao.class);
-            List<User> users = userDao.selectUser();
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            List<User> users = userMapper.selectUser();
 
             for (User user : users) {
                 System.out.println(user);
@@ -33,8 +33,8 @@ public class UserDaoTest {
     @Test
     public void getUserById() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserDao userDao = sqlSession.getMapper(UserDao.class);
-        User user = userDao.getUserById(1);
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        User user = userMapper.getUserById(1);
         System.out.println(user);
         sqlSession.close();
     }
@@ -42,8 +42,8 @@ public class UserDaoTest {
     @Test
     public void addUser() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserDao userDao = sqlSession.getMapper(UserDao.class);
-        int result= userDao.addUser(new User(4,"哈哈","12123"));
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        int result= userMapper.addUser(new User(4,"哈哈","12123"));
         System.out.println(result);
         sqlSession.commit();
         sqlSession.close();
@@ -52,8 +52,8 @@ public class UserDaoTest {
     @Test
     public void updateUser() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserDao userDao = sqlSession.getMapper(UserDao.class);
-        int result= userDao.updateUser(new User(4,"王五","12123"));
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        int result= userMapper.updateUser(new User(4,"王五","12123"));
         System.out.println(result);
         sqlSession.commit();
         sqlSession.close();
@@ -61,8 +61,8 @@ public class UserDaoTest {
     @Test
     public void deleteUser() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserDao userDao = sqlSession.getMapper(UserDao.class);
-        int result= userDao.deleteUser(4);
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        int result= userMapper.deleteUser(4);
         System.out.println(result);
         sqlSession.commit();
         sqlSession.close();

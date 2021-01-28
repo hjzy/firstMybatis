@@ -8,7 +8,7 @@ import java.util.List;
  * @author:yifan->2540584259@qq.com
  * @date:2021/1/23,21:04
  */
-public interface UserDao {
+public interface UserMapper {
 //    查询全部
     List<User> selectUser();
 //    根据id查询用户

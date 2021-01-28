@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--接口实现类由原来的impl转换为一个mapper文件-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="cn.UserMapper">
+
+
+<!--    <select id="getUserById" parameterType="int" resultType="cn.User">-->
+<!--        select * from user where id=#{id}-->
+<!--    </select>-->
+
+    <resultMap id="userMap" type="User">
+<!--    property是User类中的字段，column是数据库中的字段-->
+<!--    如果两者名字不一样，可以用resultMap进行映射-->
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="pwd" property="password"/>
+    </resultMap>
+<!--    使用resultMap实现结果集映射-->
+    <select id="getUserById" parameterType="int" resultMap="userMap">
+        select * from user where id=#{id}
+    </select>
+
+
+
+
+</mapper>

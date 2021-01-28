@@ -7,6 +7,10 @@
     <!--引入外部配置文件-->
     <properties resource="db.properties"/>
 
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+    
     <!--    方式1：可以给实体类设置别名-->
     <!--    方式2：每一个在包 cn.yifansun.pojo中的 Java Bean，在没有注解的情况下，会使用 Bean 的首字母小写的非限定类名来作为它的别名(user)。-->
     <!--    若有注解，则别名为其注解值。注解示例如下-->
@@ -15,8 +19,8 @@
     <!--    ...-->
     <!--    }-->
     <typeAliases>
-        <typeAlias type="cn.User" alias="User"/>
-        <package name="cn.yifansun.pojo"/>
+        <typeAlias type="cn.yifansun.pojo.User" alias="User"/>
+<!--        <package name="cn.yifansun.pojo"/>-->
     </typeAliases>
 
     <environments default="test">
@@ -45,5 +49,5 @@
     <mappers>
         <mapper resource="cn/yifansun/dao/UserMapper.xml"/>
     </mappers>
-    <!--        <mapper class="cn.UserMapper"/>-->
+    <!--        <mapper class="cn.yifansun.dao.UserMapper"/>-->
 </configuration>

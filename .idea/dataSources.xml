@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="yifan@47.112.243.243" uuid="22d1fb22-cac6-44da-9860-34fc7f92e05c">
+    <data-source source="LOCAL" name="yifan@yifansun.cn" uuid="9a0c137f-92b4-4134-bd64-36d3c1c3e85d">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://47.112.243.243:3306/yifan</jdbc-url>
+      <jdbc-url>jdbc:mysql://yifansun.cn:3306/yifan</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
