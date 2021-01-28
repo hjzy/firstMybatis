@@ -1,5 +1,6 @@
 package cn.yifansun.dao;
 
+import cn.yifansun.pojo.Student;
 import cn.yifansun.pojo.Teacher;
 import cn.yifansun.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
@@ -16,12 +17,25 @@ public class Test {
     static Logger logger = Logger.getLogger(Test.class);
 
     @org.junit.Test
-    public void getUserById() {
+    public void getStudents() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         //底层主要应用反射
-        TeacherMapper teacherMapper = sqlSession.getMapper(TeacherMapper.class);
-        Teacher teachers =teacherMapper.getTeacher(1);
-        System.out.println(teachers);
+        StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+       List<Student> studentList =studentMapper.getStudent();
+        for (Student student : studentList) {
+            System.out.println(student);
+        }
+        sqlSession.close();
+    }
+    @org.junit.Test
+    public void getStudents2() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        //底层主要应用反射
+        StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+        List<Student> studentList =studentMapper.getStudent2();
+        for (Student student : studentList) {
+            System.out.println(student);
+        }
         sqlSession.close();
     }
 }

@@ -2,9 +2,9 @@ package cn.yifansun.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
-@AllArgsConstructor
 public class Student
 {
     private int id;

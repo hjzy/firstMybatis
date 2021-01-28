@@ -44,7 +44,6 @@
 
 
     <mappers>
-        <!--        <mapper class="cn.cn.yifansun.dao.UserMapper"/>-->
         <mapper class="cn.yifansun.dao.TeacherMapper"/>
         <mapper class="cn.yifansun.dao.StudentMapper"/>
     </mappers>
