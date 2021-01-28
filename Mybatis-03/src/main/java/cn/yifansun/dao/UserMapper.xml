@@ -4,7 +4,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace=绑定一个对应的Dao/Mapper接口-->
-<mapper namespace="cn.UserMapper">
+<mapper namespace="cn.yifansun.dao.UserMapper">
 
 
 <!--    <select id="getUserById" parameterType="int" resultType="cn.User">-->
@@ -19,7 +19,7 @@
         <result column="pwd" property="password"/>
     </resultMap>
 <!--    使用resultMap实现结果集映射-->
-    <select id="getUserById" parameterType="int" resultMap="userMap">
+    <select id="getUserByUserid" parameterType="int" resultMap="userMap">
         select * from user where id=#{id}
     </select>
 

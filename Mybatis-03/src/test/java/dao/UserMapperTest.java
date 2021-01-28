@@ -21,8 +21,9 @@ public class UserMapperTest {
     @Test
     public void getUserById() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
+        //底层主要应用反射
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-        User user = userMapper.getUserById(1);
+        User user = userMapper.getUserByUserid(1);
         System.out.println(user);
         sqlSession.close();
     }

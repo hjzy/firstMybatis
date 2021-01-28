@@ -10,7 +10,7 @@
     <settings>
         <setting name="logImpl" value="LOG4J"/>
     </settings>
-    
+
     <!--    方式1：可以给实体类设置别名-->
     <!--    方式2：每一个在包 cn.yifansun.pojo中的 Java Bean，在没有注解的情况下，会使用 Bean 的首字母小写的非限定类名来作为它的别名(user)。-->
     <!--    若有注解，则别名为其注解值。注解示例如下-->
@@ -18,21 +18,18 @@
     <!--    public class Author {-->
     <!--    ...-->
     <!--    }-->
-    <typeAliases>
-        <typeAlias type="cn.User" alias="User"/>
-<!--        <package name="cn.yifansun.pojo"/>-->
-    </typeAliases>
+
 
     <environments default="test">
         <environment id="development">
-        <transactionManager type="JDBC"/>
-        <dataSource type="POOLED">
-            <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="url"
-                      value="jdbc:mysql://47.112.243.243:3306/yifan?useUnicode=true&amp;characterEncoding=UTF-8"/>
-            <property name="username" value="yifan"/>
-            <property name="password" value="Snow124l"/>
-        </dataSource>
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url"
+                          value="jdbc:mysql://47.112.243.243:3306/yifan?useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="yifan"/>
+                <property name="password" value="Snow124l"/>
+            </dataSource>
         </environment>
         <environment id="test">
             <transactionManager type="JDBC"/>
@@ -47,7 +44,9 @@
 
 
     <mappers>
-        <mapper class="cn.UserMapper"/>
+        <!--        <mapper class="cn.cn.yifansun.dao.UserMapper"/>-->
+        <mapper class="cn.yifansun.dao.TeacherMapper"/>
+        <mapper class="cn.yifansun.dao.StudentMapper"/>
     </mappers>
 
 </configuration>
