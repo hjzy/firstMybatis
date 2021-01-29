@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="yifan@yifansun.cn">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.21">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.20">
     <root id="1">
       <ServerVersion>5.7.32</ServerVersion>
-      <Grants>yifan|schema||yifan||ALTER|G
-yifan|schema||yifan||ALTER ROUTINE|G
-yifan|schema||yifan||CREATE|G
-yifan|schema||yifan||CREATE ROUTINE|G
-yifan|schema||yifan||CREATE TEMPORARY TABLES|G
-yifan|schema||yifan||CREATE VIEW|G
-yifan|schema||yifan||DELETE|G
-yifan|schema||yifan||DROP|G
-yifan|schema||yifan||EVENT|G
-yifan|schema||yifan||EXECUTE|G
-yifan|schema||yifan||INDEX|G
-yifan|schema||yifan||INSERT|G
-yifan|schema||yifan||LOCK TABLES|G
-yifan|schema||yifan||REFERENCES|G
-yifan|schema||yifan||SELECT|G
-yifan|schema||yifan||SHOW VIEW|G
-yifan|schema||yifan||TRIGGER|G
-yifan|schema||yifan||UPDATE|G</Grants>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
       <DefaultCasing>exact</DefaultCasing>
@@ -29,7 +11,6 @@ yifan|schema||yifan||UPDATE|G</Grants>
       <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="yifan">
-      <Grants></Grants>
       <Current>1</Current>
       <Collation>utf8_general_ci</Collation>
     </schema>
@@ -740,7 +721,11 @@ yifan|schema||yifan||UPDATE|G</Grants>
     <collation id="225" parent="1" name="utf8mb4_vietnamese_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <user id="226" parent="1" name="yifan"/>
+    <user id="226" parent="1" name="yifan">
+      <Host>%</Host>
+      <ObjectGrants>ALL PRIVILEGES|yifan
+</ObjectGrants>
+    </user>
     <table id="227" parent="3" name="Announcement"/>
     <table id="228" parent="3" name="User"/>
     <table id="229" parent="3" name="article"/>
